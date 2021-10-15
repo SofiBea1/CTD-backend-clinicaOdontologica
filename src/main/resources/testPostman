@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "1326af6a-d44b-430b-9f99-5d4a36767b74",
+		"name": "Clinica Odontologica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Odontologo",
+			"item": [
+				{
+					"name": "Guardar Odontologo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Doctor\",\r\n    \"apellido\": \"Muelitas\",\r\n    \"matricula\": \"7777999\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/odontologos/guardar",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"odontologos",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar todos",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "miContrasenia",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "sofiAdmin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/odontologos/todos",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"odontologos",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/actualizar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login USER",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "sofiAdmin@digital.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "miContrasenia",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pacientes",
+			"item": [
+				{
+					"name": "Guardar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Dolores\",\r\n    \"apellido\": \"De Muelas\",\r\n    \"dni\": \"323232\",\r\n    \"fechaIngreso\": \"2021-09-17\",\r\n    \"domicilio\": {\r\n        \"calle\": \"holitas\",\r\n        \"numero\": \"789\",\r\n        \"localidad\": \"CABA\",\r\n        \"provincia\": \"Bs As\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/pacientes/nuevo",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pacientes",
+								"nuevo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pacientes/todos",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pacientes",
+								"todos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pacientes/buscar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pacientes",
+								"buscar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"nombre\": \"Luna\",\r\n    \"apellido\": \"Lunera\",\r\n    \"dni\": \"123456\",\r\n    \"fechaIngreso\": \"2021-09-17\",\r\n    \"domicilio\": {\r\n        \"calle\": \"pepin popo\",\r\n        \"numero\": \"789\",\r\n        \"localidad\": \"CABA\",\r\n        \"provincia\": \"Bs As\"\r\n    }\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/pacientes/actualizar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pacientes",
+								"actualizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Paciente",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/pacientes/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"pacientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Turnos",
+			"item": [
+				{
+					"name": "Crear Turno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n      \"paciente\": {\"id\": \"1\"},\r\n      \"odontologo\": {\"id\": \"1\"},\r\n      \"fechaYHora\": \"2018-02-05T12:59:11.332\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/nuevo",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"nuevo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar por ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/turnos/buscar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"turnos",
+								"buscar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar turno",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1\r\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/turnos/eliminar/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"turnos",
+								"eliminar",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
